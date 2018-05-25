@@ -1,0 +1,48 @@
+<!DOCTYPE <!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <script src="angular.js"></script>
+    
+
+</head>
+
+<body>
+    <div id="googleMap" style="width:100%;height:400px;"></div>
+
+    <script>
+        (function() {
+            var name = "myApp",
+                requires = [],
+                myApp = null;
+            
+            myApp = angular.module(name, requires);
+            
+            myApp.controller("AppCtrl", function() {
+
+                this.myMap = function(){
+                    var mapProp= {
+                        center:new google.maps.LatLng(51.508742,-0.120850),
+                        zoom:5,
+                    };
+                    var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+                }
+            });
+        }());
+
+
+            function myMap() {
+            var mapProp= {
+                center:new google.maps.LatLng(51.508742,-0.120850),
+                zoom:5,
+            };
+            var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+            }
+    </script>
+   
+     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhrSBPX7M2qh6g0rdTzccxbUtZ-YG93zg&callback=myMap&libraries=places&region=us"></script> 
+   
+</body>
+</html>
